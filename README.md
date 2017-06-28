@@ -1,5 +1,7 @@
 Implements a much needed `Hash#zip` method.
 
+To install run `gem install hash-zip`, and then `require "hash-zip"` in your code.
+
 ## Usage
 
 You can zip multiple Hashes. Keys in result will be keys in any of the inputs, and values will be Arrays with missing values padded by `nil`s.
