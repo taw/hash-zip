@@ -25,3 +25,5 @@ end
 ```
 
 It works with more than one argument (`a.zip(b,c)`) as well as with zero arguments (`a.zip()`).
+
+If arguments are not `Hash`es, but accept `to_h`, they will be converted automatically before zipping.

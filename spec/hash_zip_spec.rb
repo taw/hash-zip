@@ -1,3 +1,5 @@
+require "ostruct"
+
 describe "Hash#zip" do
   it "zips itself" do
     a = {x: 1,
@@ -47,5 +49,13 @@ describe "Hash#zip" do
       [:z, 3, 5],
       [:w, nil, 6],
     ])
+  end
+
+  it "converts other arguments to Hashes" do
+    a = {x: 1, y: 2, z: 3}
+    b = OpenStruct.new(x: 4, z: 5, w: 6)
+    expect(a.zip(b)).to eq({
+      x: [1,4], y: [2,nil], z: [3,5], w: [nil,6]
+    })
   end
 end
