@@ -3,21 +3,21 @@ task "test" => "spec"
 
 desc "Run tests"
 task "spec" do
-  system "rspec"
+  sh "rspec"
 end
 
 desc "Clean up"
 task "clean" do
-  system "trash hash-zip-*.gem"
+  sh "trash hash-zip-*.gem"
 end
 
 desc "Build gem"
 task "gem:build" do
-  system "gem build hash-zip.gemspec"
+  sh "gem build hash-zip.gemspec"
 end
 
 desc "Upload gem"
 task "gem:push" => "gem:build" do
   gem_file = Dir["hash-zip-*.gem"][-1] or raise "No gem found"
-  system "gem", "push", gem_file
+  sh "gem", "push", gem_file
 end
