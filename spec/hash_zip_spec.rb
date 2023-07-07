@@ -58,4 +58,27 @@ describe "Hash#zip" do
       x: [1,4], y: [2,nil], z: [3,5], w: [nil,6]
     })
   end
+
+  it "allows ignoring nils" do
+    a = {x: 1, y: 2}
+    b = {x: 3, z: 4}
+    expect(a.zip_compact(b)).to eq({
+      x: [1,3], y: [2], z: [4]
+    })
+  end
+
+  it "returns nil, yields for each compacted item when passed a block" do
+    a = {x: 1, y: 2, z: 3}
+    b = {x: 4, z: 5, w: 6}
+    calls = []
+    expect(a.zip_compact(b){|*args|
+      calls << args
+    }).to eq(nil)
+    expect(calls).to eq([
+      [:x, 1, 4],
+      [:y, 2],
+      [:z, 3, 5],
+      [:w, 6],
+    ])
+  end
 end
