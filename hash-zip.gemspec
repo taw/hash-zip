@@ -1,9 +1,9 @@
 require "pathname"
 Gem::Specification.new do |s|
   s.name         = "hash-zip"
-  s.version      = "0.1.20170628"
-  s.date         = "2017-06-28"
-  s.summary      = "Hash#zip method"
+  s.version      = "0.2.20230803"
+  s.date         = "2023-08-03"
+  s.summary      = "Hash#zip and Hash#zip_compact methods"
   s.description  = "Zip two or more Hashes"
   s.authors      = ["Tomasz Wegrzanowski"]
   s.email        = "Tomasz.Wegrzanowski@gmail.com"
