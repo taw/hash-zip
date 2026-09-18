@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
   # tests
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
+  s.add_development_dependency "ostruct" # moved out of stdlib in ruby 4.x
 end
